@@ -1,0 +1,299 @@
+
+/* ==============================
+   EXAMS HERO
+============================== */
+
+.exams-hero {
+    background: linear-gradient(120deg, #102d49, #1769aa);
+    color: white;
+    padding: 85px 20px 110px;
+    text-align: center;
+}
+
+.exams-hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.exams-hero .hero-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #b9d9f5;
+}
+
+.exams-hero h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 22px;
+}
+
+.exams-hero p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e0eaf4;
+}
+
+.exams-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   SECTION HEADING
+============================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    display: block;
+    color: #1769aa;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #102d49;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #68778a;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   SEARCH SECTION
+============================== */
+
+.exams-search-section {
+    max-width: 1100px;
+    margin: -55px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.exams-search-card {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.09);
+}
+
+.exam-filter-form {
+    margin-top: 30px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-weight: 700;
+    font-size: 14px;
+    color: #243247;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dce3eb;
+    border-radius: 8px;
+    background: white;
+    color: #243247;
+    font-size: 14px;
+    outline: none;
+}
+
+.filter-group select:focus {
+    border-color: #1769aa;
+    box-shadow: 0 0 0 3px rgba(23,105,170,.1);
+}
+
+.search-button {
+    width: 100%;
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   AVAILABLE EXAMS
+============================== */
+
+.available-exams {
+    max-width: 1100px;
+    margin: auto;
+    padding: 85px 20px;
+}
+
+.exam-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.exam-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    background: white;
+    border: 1px solid #e8edf3;
+    border-radius: 16px;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.exam-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.exam-card-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.exam-tag {
+    display: inline-block;
+    padding: 7px 13px;
+    background: #e8f2fc;
+    color: #1769aa;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.exam-card h3 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #102d49;
+    margin: 22px 0 12px;
+    line-height: 1.5;
+}
+
+.exam-card p {
+    color: #68778a;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.exam-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    margin-bottom: 25px;
+    font-size: 13px;
+    color: #68778a;
+}
+
+.exam-year {
+    background: #f0f4f8;
+    color: #243247;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.exam-card .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   CALL TO ACTION
+============================== */
+
+.exams-cta {
+    background: #edf5fc;
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.exams-cta h2 {
+    color: #102d49;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.exams-cta p {
+    color: #68778a;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.exams-cta .btn-primary {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 768px) {
+
+    .exams-hero {
+        padding: 60px 20px 90px;
+    }
+
+    .exams-search-card {
+        padding: 25px 20px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .exam-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .available-exams {
+        padding: 60px 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .exams-cta h2 {
+        font-size: 25px;
+    }
+}

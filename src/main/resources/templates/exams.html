@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exams | Kaigo Exam</title>
+
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/exams.css}">
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+        <script defer th:src="@{/js/language.js}"></script>
+    </head>
+    <body>
+
+        <!-- Header dùng chung -->
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <main>
+
+            <!-- HERO SECTION -->
+            <section class="exams-hero">
+
+                <div class="exams-hero-content">
+
+                    <span class="hero-label"
+                          th:text="#{exams.hero.label}">
+                        KAIGO EXAM CENTER
+                    </span>
+
+                    <h1 th:text="#{exams.hero.title}">
+                        Prepare for Your Kaigo Examination
+                    </h1>
+
+                    <p th:text="#{exams.hero.description}">
+                        Build your knowledge and work towards success
+                        through practice questions and mock examinations.
+                    </p>
+
+                    <div class="exams-hero-badge">
+                        🎓
+                        <span th:text="#{exams.hero.badge}">
+                            LEARN · PRACTICE · SUCCEED
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEARCH EXAMS -->
+            <section class="exams-search-section">
+
+                <div class="exams-search-card">
+
+                    <div class="section-heading">
+
+                        <span class="section-label"
+                              th:text="#{exams.search.label}">
+                            FIND YOUR EXAM
+                        </span>
+
+                        <h2 th:text="#{exams.search.title}">
+                            Find the Right Exam for You
+                        </h2>
+
+                        <p th:text="#{exams.search.description}">
+                            Select your exam year, examination type,
+                            and subject.
+                        </p>
+
+                    </div>
+
+                    <form th:action="@{/exams}"
+                          method="get"
+                          class="exam-filter-form">
+
+                        <!-- Keep selected language -->
+                        <input type="hidden"
+                               name="lang"
+                               th:value="${currentLanguage}">
+
+                        <div class="filter-grid">
+
+                            <!-- EXAM YEAR -->
+                            <div class="filter-group">
+
+                                <label for="year"
+                                       th:text="#{exams.search.year}">
+                                    Exam Year
+                                </label>
+
+                                <select id="year"
+                                        name="year">
+
+                                    <option value=""
+                                            th:text="#{exams.search.all_years}">
+                                        All Years
+                                    </option>
+
+                                    <option value="2026"
+                                            th:selected="${selectedYear == '2026'}">
+                                        2026
+                                    </option>
+
+                                    <option value="2025"
+                                            th:selected="${selectedYear == '2025'}">
+                                        2025
+                                    </option>
+
+                                    <option value="2024"
+                                            th:selected="${selectedYear == '2024'}">
+                                        2024
+                                    </option>
+
+                                    <option value="2023"
+                                            th:selected="${selectedYear == '2023'}">
+                                        2023
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- EXAMINATION -->
+                            <div class="filter-group">
+
+                                <label for="examType"
+                                       th:text="#{exams.search.examination}">
+                                    Examination
+                                </label>
+
+                                <select id="examType"
+                                        name="examType">
+
+                                    <option value=""
+                                            th:text="#{exams.search.all_examinations}">
+                                        All Examinations
+                                    </option>
+
+                                    <option value="care-worker"
+                                            th:selected="${selectedExamType == 'care-worker'}">
+                                        介護福祉士国家試験
+                                    </option>
+
+                                    <option value="practical"
+                                            th:selected="${selectedExamType == 'practical'}">
+                                        実務者研修
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- SUBJECT -->
+                            <div class="filter-group">
+
+                                <label for="subject"
+                                       th:text="#{exams.search.subject}">
+                                    Subject
+                                </label>
+
+                                <select id="subject"
+                                        name="subject">
+
+                                    <option value=""
+                                            th:text="#{exams.search.all_subjects}">
+                                        All Subjects
+                                    </option>
+
+                                    <option value="dignity"
+                                            th:selected="${selectedSubject == 'dignity'}"
+                                            th:text="#{exams.subject.dignity}">
+                                        Human Dignity and Independence
+                                    </option>
+
+                                    <option value="care-basic"
+                                            th:selected="${selectedSubject == 'care-basic'}"
+                                            th:text="#{exams.subject.care}">
+                                        Fundamentals of Care
+                                    </option>
+
+                                    <option value="communication"
+                                            th:selected="${selectedSubject == 'communication'}"
+                                            th:text="#{exams.subject.communication}">
+                                        Human Relationships and Communication
+                                    </option>
+
+                                    <option value="daily-life"
+                                            th:selected="${selectedSubject == 'daily-life'}"
+                                            th:text="#{exams.subject.support}">
+                                        Daily Life Support Skills
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn-primary search-button"
+                                th:text="#{exams.search.button}">
+                            Search Exams
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- AVAILABLE EXAMS -->
+            <section class="available-exams">
+
+                <div class="section-heading">
+
+                    <span class="section-label"
+                          th:text="#{exams.available.label}">
+                        EXAM CATALOG
+                    </span>
+
+                    <h2 th:text="#{exams.available.title}">
+                        Available Exams
+                    </h2>
+
+                    <p th:text="#{exams.available.description}">
+                        Choose your learning materials and practice
+                        at your own pace.
+                    </p>
+
+                </div>
+
+
+                <div class="exam-card-grid">
+
+                    <!-- MOCK TEST CARD -->
+                    <article class="exam-card">
+
+                        <div class="exam-card-icon">
+                            📝
+                        </div>
+
+                        <span class="exam-tag"
+                              th:text="#{exams.mock.badge}">
+                            MOCK TEST
+                        </span>
+
+                        <h3 th:text="#{exams.mock.title}">
+                            Care Worker National Examination
+                        </h3>
+
+                        <p th:text="#{exams.mock.description}">
+                            Challenge yourself with mock tests.
+                        </p>
+
+                        <div class="exam-card-meta">
+
+                            <span class="exam-year">
+                                2026
+                            </span>
+
+                            <span th:text="#{exams.mock.subjects}">
+                                All Subjects
+                            </span>
+
+                        </div>
+
+                        <a th:href="@{/exams/mock}"
+                           class="btn-primary"
+                           th:text="#{exams.mock.button}">
+                            Start Mock Test →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SUBJECT PRACTICE CARD -->
+                    <article class="exam-card">
+
+                        <div class="exam-card-icon">
+                            📚
+                        </div>
+
+                        <span class="exam-tag"
+                              th:text="#{exams.subject.badge}">
+                            SUBJECT PRACTICE
+                        </span>
+
+                        <h3 th:text="#{exams.subject.title}">
+                            Practice by Subject
+                        </h3>
+
+                        <p th:text="#{exams.subject.description}">
+                            Strengthen your knowledge through
+                            questions organized by subject.
+                        </p>
+
+                        <div class="exam-card-meta">
+
+                            <span class="exam-year">
+                                2026
+                            </span>
+
+                            <span th:text="#{exams.subject.count}">
+                                Multiple Subjects
+                            </span>
+
+                        </div>
+
+                        <a th:href="@{/exams/subjects}"
+                           class="btn-primary"
+                           th:text="#{exams.subject.button}">
+                            Explore Subjects →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CALL TO ACTION -->
+            <section class="exams-cta">
+
+                <h2 th:text="#{exams.cta.title}">
+                    Start Preparing Today
+                </h2>
+
+                <p th:text="#{exams.cta.description}">
+                    Keep learning and take one step closer
+                    to passing your Kaigo examination.
+                </p>
+
+                <a th:href="@{/register}"
+                   class="btn-primary"
+                   th:text="#{exams.cta.button}">
+                    Start Learning →
+                </a>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer dùng chung -->
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </body>
+</html>

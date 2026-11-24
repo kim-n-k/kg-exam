@@ -9,99 +9,129 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/auth.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
         <script defer th:src="@{/js/language.js}"></script>
     </head>
     <body>
 
-        <header class="header">
+        <!-- Header -->
+        <div th:replace="~{fragments/header :: header}"></div>
 
-            <a href="/" class="logo">
-                <span>介護</span>
-                <strong>Kaigo Exam</strong>
-            </a>
-
-            <div class="header-right">
-
-                <select id="languageSelect" class="language-select">
-                    <option value="ja">🇯🇵 日本語</option>
-                    <option value="vi">🇻🇳 Tiếng Việt</option>
-                    <option value="en">🇬🇧 English</option>
-                </select>
-
-                <a href="/" class="home-link" data-i18n="home">
-                    Home
-                </a>
-
-            </div>
-
-        </header>
-
-
+        <!-- REGISTER SECTION -->
         <main class="auth-container">
 
             <div class="auth-card">
 
-                <div class="auth-logo">介護</div>
+                <!-- TITLE -->
+                <div class="auth-heading">
 
-                <h1 data-i18n="registerTitle">
-                    Create Your Account
-                </h1>
+                    <h1 th:text="#{register.title}">
+                        Create Your Account
+                    </h1>
 
-                <p class="description"
-                   data-i18n="registerDescription">
-                    Join Kaigo Exam and start learning today.
-                </p>
+                    <p th:text="#{register.description}">
+                        Join Kaigo Exam and start learning today.
+                    </p>
 
-                <form action="/register" method="post">
+                </div>
 
+
+                <!-- REGISTER FORM -->
+                <form th:action="@{/register}"
+                      method="post"
+                      class="auth-form">
+
+
+                    <!-- FULL NAME -->
                     <div class="form-group">
-                        <label data-i18n="fullName">Full Name</label>
+
+                        <label for="fullName"
+                               th:text="#{register.fullname}">
+                            Full Name
+                        </label>
 
                         <input type="text"
+                               id="fullName"
                                name="fullName"
+                               autocomplete="name"
                                required>
+
                     </div>
 
+
+                    <!-- EMAIL -->
                     <div class="form-group">
-                        <label data-i18n="email">Email Address</label>
+
+                        <label for="email"
+                               th:text="#{register.email}">
+                            Email Address
+                        </label>
 
                         <input type="email"
+                               id="email"
                                name="email"
+                               placeholder="example@email.com"
+                               autocomplete="email"
                                required>
+
                     </div>
 
+
+                    <!-- PASSWORD -->
                     <div class="form-group">
-                        <label data-i18n="password">Password</label>
+
+                        <label for="password"
+                               th:text="#{register.password}">
+                            Password
+                        </label>
 
                         <input type="password"
+                               id="password"
                                name="password"
+                               autocomplete="new-password"
+                               minlength="8"
                                required>
+
                     </div>
 
+
+                    <!-- CONFIRM PASSWORD -->
                     <div class="form-group">
-                        <label data-i18n="confirmPassword">
+
+                        <label for="confirmPassword"
+                               th:text="#{register.confirm.password}">
                             Confirm Password
                         </label>
 
                         <input type="password"
+                               id="confirmPassword"
                                name="confirmPassword"
+                               autocomplete="new-password"
+                               minlength="8"
                                required>
+
                     </div>
 
-                    <button type="submit" class="btn-primary"
-                            data-i18n="signUp">
+
+                    <!-- REGISTER BUTTON -->
+                    <button type="submit"
+                            class="auth-submit"
+                            th:text="#{register.button}">
                         Sign Up
                     </button>
 
                 </form>
 
+
+                <!-- LOGIN LINK -->
                 <div class="auth-footer">
 
-                    <span data-i18n="alreadyAccount">
+                    <span th:text="#{register.have.account}">
                         Already have an account?
                     </span>
 
-                    <a href="/login" data-i18n="signIn">
+                    <a th:href="@{/login}"
+                       th:text="#{register.signin}">
                         Sign In
                     </a>
 
@@ -111,8 +141,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         </main>
 
-        <footer>
-            © 2026 Kaigo Exam System
-        </footer>
+
+        <!-- Footer -->
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </body>
 </html>

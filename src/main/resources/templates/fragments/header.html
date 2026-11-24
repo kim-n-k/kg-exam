@@ -1,0 +1,39 @@
+<header class="header">
+    <div class="logo">
+        <a href="/" class="logo">
+            <img th:src="@{/images/logo.png}" alt="Kaigo Exam Logo" class="logo-image">
+        </a>
+    </div>
+
+    <nav class="menu">
+        <a th:href="@{/}" th:text="#{common.home}">Home</a>
+        <a th:href="@{/exams}" th:text="#{common.exams}">Exams</a>
+        <a th:href="@{/courses}" th:text="#{common.courses}">Courses</a>
+        <a th:href="@{/about}" th:text="#{common.about}">About</a>
+    </nav>
+
+    <div class="header-actions">
+        <select id="languageSelect" class="language-select">
+            <option value="ja"　th:selected="${currentLanguage == 'ja'}">
+                日本語
+            </option>
+
+            <option value="vi"
+                    th:selected="${currentLanguage == 'vi'}">
+                Tiếng Việt
+            </option>
+
+            <option value="en"
+                    th:selected="${currentLanguage == 'en'}">
+                English
+            </option>
+        </select>
+
+        <a href="/login" class="btn-login" th:text="#{common.login}"
+           data-i18n="login">Login</a>
+
+        <a href="/register" class="btn-register" th:text="#{common.register}"
+           data-i18n="register">Register</a>
+
+    </div>
+</header>

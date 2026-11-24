@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Courses | Kaigo Exam</title>
+
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/courses.css}">
+        <script defer th:src="@{/js/language.js}"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <main>
+
+            <!-- HERO SECTION -->
+            <section class="courses-hero">
+
+                <div class="courses-hero-content">
+
+                    <span class="hero-label"
+                          th:text="#{courses.hero.label}">
+                        LEARN AND GROW
+                    </span>
+
+                    <h1 th:text="#{courses.hero.title}">
+                        Explore Our Courses
+                    </h1>
+
+                    <p th:text="#{courses.hero.description}">
+                        Develop your caregiving knowledge and skills
+                        with our online courses.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- COURSE SECTION -->
+            <section class="courses-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label"
+                          th:text="#{courses.section.label}">
+                        OUR LEARNING PROGRAMS
+                    </span>
+
+                    <h2 th:text="#{courses.filter.title}">
+                        Find Your Course
+                    </h2>
+
+                </div>
+
+
+                <!-- COURSE FILTER -->
+                <div class="course-filters">
+
+                    <button class="filter-btn active"
+                            type="button"
+                            data-filter="all"
+                            th:text="#{courses.filter.all}">
+                        All Courses
+                    </button>
+
+                    <button class="filter-btn"
+                            type="button"
+                            data-filter="basic"
+                            th:text="#{courses.filter.basic}">
+                        Basic Knowledge
+                    </button>
+
+                    <button class="filter-btn"
+                            type="button"
+                            data-filter="exam"
+                            th:text="#{courses.filter.exam}">
+                        Exam Preparation
+                    </button>
+
+                    <button class="filter-btn"
+                            type="button"
+                            data-filter="japanese"
+                            th:text="#{courses.filter.japanese}">
+                        Japanese Language
+                    </button>
+
+                </div>
+
+
+                <!-- COURSE CARDS -->
+                <div class="course-grid">
+
+
+                    <!-- COURSE 1: BASIC -->
+                    <article class="course-card"
+                             data-category="basic">
+
+                        <div class="course-card-header">
+
+                            <span class="course-level"
+                                  th:text="#{courses.level.beginner}">
+                                BEGINNER
+                            </span>
+
+                            <div class="course-icon">👩‍⚕️</div>
+
+                        </div>
+
+                        <div class="course-card-body">
+
+                            <span class="course-category"
+                                  th:text="#{courses.category.basic}">
+                                Basic Knowledge
+                            </span>
+
+                            <h3 th:text="#{courses.basic.title}">
+                                Introduction to Kaigo
+                            </h3>
+
+                            <p th:text="#{courses.basic.description}">
+                                Learn the basic concepts and responsibilities
+                                of caregiving in Japan.
+                            </p>
+
+                            <div class="course-meta">
+
+                                <span>📚</span>
+
+                                <span class="course-level-text"
+                                      th:text="#{courses.level.beginner}">
+                                    Beginner
+                                </span>
+
+                                <span class="course-price free"
+                                      th:text="#{courses.free}">
+                                    Free
+                                </span>
+
+                            </div>
+
+                            <a th:href="@{/courses/basic}"
+                               class="course-link"
+                               th:text="#{courses.view}">
+                                View Course →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- COURSE 2: EXAM -->
+                    <article class="course-card"
+                             data-category="exam">
+
+                        <div class="course-card-header">
+
+                            <span class="course-level"
+                                  th:text="#{courses.level.intermediate}">
+                                INTERMEDIATE
+                            </span>
+
+                            <div class="course-icon">📝</div>
+
+                        </div>
+
+                        <div class="course-card-body">
+
+                            <span class="course-category"
+                                  th:text="#{courses.category.exam}">
+                                Examination
+                            </span>
+
+                            <h3 th:text="#{courses.exam.title}">
+                                Kaigo National Exam Preparation
+                            </h3>
+
+                            <p th:text="#{courses.exam.description}">
+                                Prepare for the Care Worker National
+                                Examination with structured lessons.
+                            </p>
+
+                            <div class="course-meta">
+
+                                <span>📚</span>
+
+                                <span class="course-level-text"
+                                      th:text="#{courses.level.intermediate}">
+                                    Intermediate
+                                </span>
+
+                                <span class="course-price paid"
+                                      th:text="#{courses.paid}">
+                                    Paid
+                                </span>
+
+                            </div>
+
+                            <a th:href="@{/courses/exam-preparation}"
+                               class="course-link"
+                               th:text="#{courses.view}">
+                                View Course →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- COURSE 3: JAPANESE -->
+                    <article class="course-card"
+                             data-category="japanese">
+
+                        <div class="course-card-header">
+
+                            <span class="course-level"
+                                  th:text="#{courses.level.beginner}">
+                                BEGINNER
+                            </span>
+
+                            <div class="course-icon">🇯🇵</div>
+
+                        </div>
+
+                        <div class="course-card-body">
+
+                            <span class="course-category"
+                                  th:text="#{courses.category.japanese}">
+                                Japanese
+                            </span>
+
+                            <h3 th:text="#{courses.japanese.title}">
+                                Japanese for Care Workers
+                            </h3>
+
+                            <p th:text="#{courses.japanese.description}">
+                                Learn useful Japanese vocabulary
+                                and communication for caregiving situations.
+                            </p>
+
+                            <div class="course-meta">
+
+                                <span>📚</span>
+
+                                <span class="course-level-text"
+                                      th:text="#{courses.level.beginner}">
+                                    Beginner
+                                </span>
+
+                                <span class="course-price paid"
+                                      th:text="#{courses.paid}">
+                                    Paid
+                                </span>
+
+                            </div>
+
+                            <a th:href="@{/courses/japanese}"
+                               class="course-link"
+                               th:text="#{courses.view}">
+                                View Course →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CTA SECTION -->
+            <section class="courses-cta">
+
+                <h2 th:text="#{courses.cta.title}">
+                    Start Learning Today
+                </h2>
+
+                <p th:text="#{courses.cta.description}">
+                    Choose a course and take your next step.
+                </p>
+
+                <a th:href="@{/register}"
+                   class="btn-primary"
+                   th:text="#{courses.cta.button}">
+                    Join Kaigo Exam
+                </a>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </body>
+</html>

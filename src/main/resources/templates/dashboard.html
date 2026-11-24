@@ -9,84 +9,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
         <script defer th:src="@{/js/language.js}"></script>
     </head>
     <body>
 
         <!-- HEADER -->
-        <header class="header">
-
-            <div class="logo">
-                <a href="/" class="logo">
-                    <img th:src="@{/images/logo.png}"
-                         alt="Kaigo Exam Logo"
-                         class="logo-image">
-                </a>
-                <h2>Kaigo Exam</h2>
-            </div>
-
-            <nav class="menu">
-                <a href="/">Home</a>
-                <a href="#exams">Exams</a>
-                <a href="#courses">Courses</a>
-                <a href="#about">About</a>
-            </nav>
-
-<!--            <div class="header-actions">
-                <a href="/login" class="btn-login">Login</a>
-                <a href="/register" class="btn-register">
-                    Register
-                </a>
-            </div>-->
-
-            <div class="header-actions">
-
-                <select id="languageSelect" class="language-select">
-                    <option value="ja">🇯🇵 日本語</option>
-                    <option value="vi">🇻🇳 Tiếng Việt</option>
-                    <option value="en">🇬🇧 English</option>
-                </select>
-
-                <a href="/login" class="btn-login"
-                   data-i18n="login">Login</a>
-
-                <a href="/register" class="btn-register"
-                   data-i18n="register">Register</a>
-
-            </div>
-        </header>
-
+        <!-- Header dùng chung -->
+        <div th:replace="~{fragments/header :: header}"></div>
 
         <!-- MAIN CONTENT -->
         <main>
 
+            <!-- HERO SECTION -->
             <section class="hero">
 
                 <div class="hero-content">
 
-                    <span class="tag">
+                    <span class="hero-label"
+                          th:text="#{home.preparation.label}">
                         KAIGO EXAM PREPARATION
                     </span>
 
-                    <h1>
-                        Prepare for Your
-                        <span>Kaigo Career</span>
+                    <h1 th:text="#{home.hero.title}">
+                        Prepare for Your Kaigo Career
                     </h1>
 
-                    <p>
+                    <p th:text="#{home.hero.description}">
                         Practice Japanese Care Worker examinations,
                         improve your knowledge and prepare for
                         your future career in Japan.
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="/login" class="btn-primary">
+
+                        <a th:href="@{/courses}"
+                           class="btn-primary"
+                           th:text="#{home.hero.start}">
                             Start Learning
                         </a>
 
-                        <a href="#exams" class="btn-outline">
+                        <a th:href="@{/exams}"
+                           class="btn-secondary"
+                           th:text="#{home.hero.explore}">
                             Explore Exams
                         </a>
+
                     </div>
 
                 </div>
@@ -94,38 +62,101 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </section>
 
 
-            <!-- FEATURES -->
-            <section class="features" id="exams">
+            <!-- LEARNING DASHBOARD -->
+            <section class="learning-dashboard">
 
-                <h2>Learning Dashboard</h2>
+                <div class="section-heading">
 
-                <div class="feature-grid">
+                    <h2 th:text="#{home.dashboard.title}">
+                        Learning Dashboard
+                    </h2>
 
-                    <div class="feature-card">
-                        <h3>📝 Mock Exams</h3>
-                        <p>
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <!-- MOCK EXAMS -->
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">📝</div>
+
+                        <h3 th:text="#{home.dashboard.mock.title}">
+                            Mock Exams
+                        </h3>
+
+                        <p th:text="#{home.dashboard.mock.description}">
                             Practice with simulated Kaigo
                             examination questions.
                         </p>
-                        <a href="/exams">View Exams →</a>
+
+                        <a th:href="@{/exams}"
+                           class="card-link">
+
+                            <span th:text="#{home.dashboard.mock.button}">
+                                View Exams
+                            </span>
+
+                            →
+
+                        </a>
+
                     </div>
 
-                    <div class="feature-card">
-                        <h3>📚 Courses</h3>
-                        <p>
+
+                    <!-- COURSES -->
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">📚</div>
+
+                        <h3 th:text="#{home.dashboard.courses.title}">
+                            Courses
+                        </h3>
+
+                        <p th:text="#{home.dashboard.courses.description}">
                             Study professional Japanese
                             nursing care knowledge.
                         </p>
-                        <a href="/courses">View Courses →</a>
+
+                        <a th:href="@{/courses}"
+                           class="card-link">
+
+                            <span th:text="#{home.dashboard.courses.button}">
+                                View Courses
+                            </span>
+
+                            →
+
+                        </a>
+
                     </div>
 
-                    <div class="feature-card">
-                        <h3>📊 My Results</h3>
-                        <p>
+
+                    <!-- MY RESULTS -->
+                    <div class="dashboard-card">
+
+                        <div class="card-icon">📊</div>
+
+                        <h3 th:text="#{home.dashboard.results.title}">
+                            My Results
+                        </h3>
+
+                        <p th:text="#{home.dashboard.results.description}">
                             Track your learning progress
                             and examination results.
                         </p>
-                        <a href="/results">View Results →</a>
+
+                        <a th:href="@{/results}"
+                           class="card-link">
+
+                            <span th:text="#{home.dashboard.results.button}">
+                                View Results
+                            </span>
+
+                            →
+
+                        </a>
+
                     </div>
 
                 </div>
@@ -133,11 +164,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </section>
 
         </main>
-
-
         <!-- FOOTER -->
-        <footer>
-            <p>© 2026 Kaigo Exam System. All rights reserved.</p>
-        </footer>
+        <!-- Footer dùng chung -->
+        <div th:replace="~{fragments/footer :: footer}">
+        </div>
     </body>
 </html>

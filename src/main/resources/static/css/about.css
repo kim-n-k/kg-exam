@@ -1,0 +1,1003 @@
+/* ===================================================== KAIGO EXAM - ABOUT PAGE Modern Japanese Caregiving Education ===================================================== */
+
+/* =====================================================
+
+GLOBAL VARIABLES ===================================================== */
+
+:root { --about-primary: #164e63; --about-primary-dark: #123b50;
+
+--about-secondary: #0f766e;
+--about-accent: #5eead4;
+
+--about-mint: #f0fdfa;
+--about-blue-light: #eff6ff;
+
+--about-bg: #f8fafc;
+--about-white: #ffffff;
+
+--about-heading: #15354b;
+--about-text: #64748b;
+--about-border: #e2e8f0;
+
+--about-shadow:
+    0 15px 40px rgba(15, 45, 80, 0.07);
+
+--about-radius: 22px;
+
+
+}
+
+/* =====================================================
+
+GENERAL ===================================================== */
+
+main { width: 100%; overflow: hidden; }
+
+.about-hero, .about-intro, .about-purpose, .about-values, .about-cta { width: 100%; box-sizing: border-box; }
+
+.about-intro *, .about-purpose *, .about-values *, .about-hero *, .about-cta * { box-sizing: border-box; }
+
+/* =====================================================
+
+HERO SECTION ===================================================== */
+
+.about-hero { position: relative;
+
+padding: 110px 24px 125px;
+
+text-align: center;
+color: var(--about-white);
+
+background:
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(94, 234, 212, 0.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 85% 80%,
+        rgba(96, 165, 250, 0.18),
+        transparent 30%
+    ),
+    linear-gradient(
+        120deg,
+        #12354d 0%,
+        #164e63 55%,
+        #0f766e 100%
+    );
+
+overflow: hidden;
+
+
+}
+
+/* Decorative circles */
+
+.about-hero::before { content: "";
+
+position: absolute;
+
+width: 300px;
+height: 300px;
+
+top: -150px;
+right: -80px;
+
+border: 1px solid rgba(255, 255, 255, 0.12);
+
+border-radius: 50%;
+
+
+}
+
+.about-hero::after { content: "";
+
+position: absolute;
+
+width: 220px;
+height: 220px;
+
+bottom: -120px;
+left: -60px;
+
+border: 1px solid rgba(255, 255, 255, 0.12);
+
+border-radius: 50%;
+
+
+}
+
+.about-hero-content { position: relative; z-index: 2;
+
+max-width: 900px;
+margin: 0 auto;
+
+
+}
+
+.hero-label { display: inline-block;
+
+padding: 9px 20px;
+
+color: #99f6e4;
+
+background: rgba(255, 255, 255, 0.10);
+
+border: 1px solid rgba(255, 255, 255, 0.18);
+
+border-radius: 50px;
+
+font-size: 12px;
+font-weight: 800;
+
+letter-spacing: 2.5px;
+
+
+}
+
+.about-hero h1 { max-width: 850px;
+
+margin: 28px auto 22px;
+
+color: #ffffff;
+
+font-size: clamp(34px, 5vw, 54px);
+
+line-height: 1.2;
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+.about-hero p { max-width: 700px;
+
+margin: 0 auto;
+
+color: rgba(255, 255, 255, 0.82);
+
+font-size: 17px;
+line-height: 1.9;
+
+
+}
+
+/* Hero badge */
+
+.about-hero-badge { display: inline-flex;
+
+align-items: center;
+justify-content: center;
+
+gap: 12px;
+
+margin-top: 35px;
+padding: 13px 24px;
+
+color: #ffffff;
+
+background: rgba(255, 255, 255, 0.12);
+
+border: 1px solid rgba(255, 255, 255, 0.2);
+
+border-radius: 50px;
+
+font-size: 13px;
+font-weight: 700;
+
+letter-spacing: 1.5px;
+
+backdrop-filter: blur(8px);
+
+
+}
+
+/* =====================================================
+
+WHO WE ARE ===================================================== */
+
+.about-intro { padding: 100px 7%;
+
+background: linear-gradient(
+    135deg,
+    #f0fdfa 0%,
+    #ffffff 55%,
+    #eff6ff 100%
+);
+
+
+}
+
+.about-intro-content { max-width: 1200px;
+
+margin: 0 auto;
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+align-items: center;
+
+gap: 75px;
+
+
+}
+
+/* Image container */
+
+.about-intro-image { position: relative;
+
+min-height: 420px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+
+}
+
+/* Placeholder */
+
+.about-image-placeholder { position: relative; z-index: 1;
+
+width: 100%;
+max-width: 480px;
+
+height: 380px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+font-size: 110px;
+
+background: linear-gradient(
+    145deg,
+    #ccfbf1,
+    #dbeafe
+);
+
+border-radius: 30px 100px 30px 100px;
+
+box-shadow:
+    0 25px 60px rgba(15, 118, 110, 0.12);
+
+transition: transform 0.35s ease;
+
+
+}
+
+.about-image-placeholder::before { content: "";
+
+position: absolute;
+
+inset: 0;
+
+border: 2px solid rgba(15, 118, 110, 0.2);
+
+border-radius: inherit;
+
+transform: rotate(-6deg);
+
+z-index: -1;
+
+
+}
+
+.about-image-placeholder:hover { transform: translateY(-8px); }
+
+/* Real image support */
+
+.about-intro-image img { width: 100%; max-width: 480px;
+
+height: 380px;
+
+object-fit: cover;
+
+border-radius: 30px 100px 30px 100px;
+
+box-shadow:
+    0 25px 60px rgba(15, 118, 110, 0.15);
+
+transition: transform 0.35s ease;
+
+
+}
+
+.about-intro-image img:hover { transform: translateY(-8px); }
+
+/* Intro text */
+
+.about-intro-text { max-width: 540px; }
+
+.section-label { display: inline-block;
+
+margin-bottom: 16px;
+
+color: var(--about-secondary);
+
+font-size: 12px;
+font-weight: 800;
+
+letter-spacing: 2.5px;
+
+text-transform: uppercase;
+
+
+}
+
+.about-intro-text h2 { margin: 0 0 25px;
+
+color: var(--about-heading);
+
+font-size: clamp(32px, 4vw, 46px);
+
+font-weight: 800;
+
+line-height: 1.25;
+
+
+}
+
+.about-intro-text p { margin: 0 0 18px;
+
+color: var(--about-text);
+
+font-size: 16px;
+
+line-height: 1.95;
+
+
+}
+
+/* Primary button */
+
+.btn-primary { display: inline-flex;
+
+align-items: center;
+justify-content: center;
+
+margin-top: 18px;
+
+padding: 15px 30px;
+
+color: #ffffff;
+
+background: var(--about-primary);
+
+border: none;
+border-radius: 12px;
+
+font-size: 15px;
+font-weight: 700;
+
+text-decoration: none;
+
+box-shadow:
+    0 8px 20px rgba(22, 78, 99, 0.18);
+
+transition: all 0.3s ease;
+
+
+}
+
+.btn-primary:hover { color: #ffffff;
+
+background: var(--about-secondary);
+
+transform: translateY(-4px);
+
+box-shadow:
+    0 12px 25px rgba(15, 118, 110, 0.25);
+
+
+}
+
+/* =====================================================
+
+MISSION & VISION ===================================================== */
+
+.about-purpose { padding: 100px 7%;
+
+background: #ffffff;
+
+
+}
+
+/* Section heading */
+
+.section-heading { max-width: 700px;
+
+margin: 0 auto 60px;
+
+text-align: center;
+
+
+}
+
+.section-heading .section-label { margin-bottom: 12px; }
+
+.section-heading h2 { margin: 0;
+
+color: var(--about-heading);
+
+font-size: clamp(30px, 3.5vw, 40px);
+
+font-weight: 800;
+
+
+}
+
+/* Purpose grid */
+
+.purpose-grid { max-width: 1100px;
+
+margin: 0 auto;
+
+display: grid;
+
+grid-template-columns: repeat(2, minmax(0, 1fr));
+
+gap: 35px;
+
+
+}
+
+/* Purpose card */
+
+.purpose-card { position: relative;
+
+padding: 45px 40px;
+
+background: #ffffff;
+
+border: 1px solid var(--about-border);
+
+border-radius: 24px;
+
+box-shadow:
+    0 10px 35px rgba(15, 23, 42, 0.04);
+
+overflow: hidden;
+
+transition: all 0.35s ease;
+
+
+}
+
+/* Top accent */
+
+.purpose-card::before { content: "";
+
+position: absolute;
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 5px;
+
+background: linear-gradient(
+    90deg,
+    #0f766e,
+    #5eead4
+);
+
+
+}
+
+.purpose-card:hover { transform: translateY(-9px);
+
+border-color: #99f6e4;
+
+box-shadow:
+    0 25px 50px rgba(15, 118, 110, 0.12);
+
+
+}
+
+/* Purpose icon */
+
+.purpose-icon { width: 75px; height: 75px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+margin-bottom: 28px;
+
+background: #ccfbf1;
+
+border-radius: 20px;
+
+font-size: 35px;
+
+transition: all 0.35s ease;
+
+
+}
+
+.purpose-card:hover .purpose-icon { transform: rotate(-8deg) scale(1.08);
+
+background: #99f6e4;
+
+
+}
+
+.purpose-card h3 { margin: 0 0 18px;
+
+color: var(--about-heading);
+
+font-size: 24px;
+
+font-weight: 800;
+
+
+}
+
+.purpose-card p { margin: 0;
+
+color: var(--about-text);
+
+font-size: 16px;
+
+line-height: 1.9;
+
+
+}
+
+/* =====================================================
+
+CORE VALUES ===================================================== */
+
+.about-values { padding: 100px 7%;
+
+background: var(--about-bg);
+
+
+}
+
+/* Values grid */
+
+.values-grid { max-width: 1150px;
+
+margin: 0 auto;
+
+display: grid;
+
+grid-template-columns: repeat(3, minmax(0, 1fr));
+
+gap: 28px;
+
+
+}
+
+/* Value card */
+
+.value-card { position: relative;
+
+padding: 40px 30px;
+
+background: #ffffff;
+
+border: 1px solid var(--about-border);
+
+border-radius: 22px;
+
+text-align: center;
+
+box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.035);
+
+transition: all 0.35s ease;
+
+
+}
+
+.value-card:hover { transform: translateY(-9px);
+
+border-color: #99f6e4;
+
+box-shadow:
+    0 20px 45px rgba(15, 118, 110, 0.10);
+
+
+}
+
+/* Value icon */
+
+.value-icon { width: 78px; height: 78px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+margin: 0 auto 25px;
+
+background: linear-gradient(
+    145deg,
+    #ccfbf1,
+    #e0f2fe
+);
+
+border-radius: 22px;
+
+font-size: 36px;
+
+transition: all 0.35s ease;
+
+
+}
+
+.value-card:hover .value-icon { transform: scale(1.1) rotate(-6deg); }
+
+/* Value title */
+
+.value-card h3 { margin: 0 0 15px;
+
+color: var(--about-heading);
+
+font-size: 20px;
+
+font-weight: 800;
+
+line-height: 1.4;
+
+
+}
+
+/* Value description */
+
+.value-card p { margin: 0;
+
+color: var(--about-text);
+
+font-size: 14px;
+
+line-height: 1.9;
+
+
+}
+
+/* =====================================================
+
+CALL TO ACTION ===================================================== */
+
+.about-cta { position: relative;
+
+padding: 85px 24px;
+
+text-align: center;
+
+color: #ffffff;
+
+background:
+    radial-gradient(
+        circle at 85% 20%,
+        rgba(94, 234, 212, 0.18),
+        transparent 28%
+    ),
+    linear-gradient(
+        120deg,
+        #12354d,
+        #164e63,
+        #0f766e
+    );
+
+overflow: hidden;
+
+
+}
+
+.about-cta h2 { margin: 0 0 18px;
+
+color: #ffffff;
+
+font-size: clamp(30px, 4vw, 40px);
+
+font-weight: 800;
+
+
+}
+
+.about-cta p { max-width: 650px;
+
+margin: 0 auto;
+
+color: rgba(255, 255, 255, 0.85);
+
+font-size: 16px;
+
+line-height: 1.9;
+
+
+}
+
+/* CTA button */
+
+.about-cta .btn-primary { margin-top: 28px;
+
+padding: 16px 35px;
+
+color: var(--about-primary);
+
+background: #ffffff;
+
+box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+
+
+}
+
+.about-cta .btn-primary:hover { color: var(--about-secondary);
+
+background: #ccfbf1;
+
+transform: translateY(-4px);
+
+
+}
+
+/* =====================================================
+
+TABLET RESPONSIVE ===================================================== */
+
+@media (max-width: 992px) {
+
+.about-hero {
+    padding: 90px 24px 105px;
+}
+
+.about-intro,
+.about-purpose,
+.about-values {
+    padding: 75px 5%;
+}
+
+.about-intro-content {
+    gap: 40px;
+}
+
+.about-image-placeholder,
+.about-intro-image img {
+    height: 320px;
+}
+
+.purpose-card {
+    padding: 35px 30px;
+}
+
+.values-grid {
+    gap: 20px;
+}
+
+.value-card {
+    padding: 32px 22px;
+}
+
+
+}
+
+/* =====================================================
+
+MOBILE RESPONSIVE ===================================================== */
+
+@media (max-width: 768px) {
+
+/* Hero */
+
+.about-hero {
+    padding: 75px 22px 85px;
+}
+
+.about-hero h1 {
+    font-size: 34px;
+}
+
+.about-hero p {
+    font-size: 15px;
+}
+
+
+/* Intro */
+
+.about-intro {
+    padding: 60px 6%;
+}
+
+.about-intro-content {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+}
+
+.about-intro-image {
+    min-height: 280px;
+}
+
+.about-image-placeholder,
+.about-intro-image img {
+    max-width: 100%;
+
+    height: 260px;
+
+    border-radius: 25px 70px 25px 70px;
+}
+
+.about-image-placeholder {
+    font-size: 85px;
+}
+
+.about-intro-text {
+    max-width: 100%;
+
+    text-align: center;
+}
+
+.about-intro-text h2 {
+    font-size: 32px;
+}
+
+.about-intro-text p {
+    font-size: 15px;
+
+    text-align: left;
+}
+
+
+/* Mission & Vision */
+
+.about-purpose {
+    padding: 65px 6%;
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+}
+
+.purpose-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+}
+
+.purpose-card {
+    padding: 35px 28px;
+}
+
+
+/* Values */
+
+.about-values {
+    padding: 65px 6%;
+}
+
+.values-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+}
+
+.value-card {
+    padding: 35px 28px;
+}
+
+
+/* CTA */
+
+.about-cta {
+    padding: 65px 22px;
+}
+
+
+}
+
+/* =====================================================
+
+SMALL MOBILE ===================================================== */
+
+@media (max-width: 480px) {
+
+.about-hero {
+    padding: 65px 20px 75px;
+}
+
+.about-hero h1 {
+    font-size: 29px;
+}
+
+.about-hero p {
+    font-size: 14px;
+}
+
+.about-hero-badge {
+    padding: 11px 16px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+.about-intro {
+    padding: 45px 20px;
+}
+
+.about-intro-text h2 {
+    font-size: 28px;
+}
+
+.about-image-placeholder,
+.about-intro-image img {
+    height: 220px;
+}
+
+.about-image-placeholder {
+    font-size: 70px;
+}
+
+
+.about-purpose,
+.about-values {
+    padding: 55px 20px;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+}
+
+.purpose-card,
+.value-card {
+    padding: 30px 24px;
+}
+
+.purpose-card h3 {
+    font-size: 22px;
+}
+
+.value-card h3 {
+    font-size: 19px;
+}
+
+
+.btn-primary {
+    width: 100%;
+}
+
+
+.about-cta {
+    padding: 55px 20px;
+}
+
+.about-cta h2 {
+    font-size: 28px;
+}
+
+
+}
+
+/* =====================================================
+
+ACCESSIBILITY ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+*,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+}
+
+
+}

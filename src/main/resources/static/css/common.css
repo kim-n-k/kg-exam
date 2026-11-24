@@ -1,0 +1,91 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2026/11/24, 17:08:05
+    Author     : kai
+*/
+
+/* HEADER */
+
+.header {
+    height: 75px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    width: 190px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo span {
+    background: #087f6e;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.logo h2 {
+    color: #087f6e;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #526174;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    color: #087f6e;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-login,
+.btn-register {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-login {
+    color: #087f6e;
+    border: 1px solid #087f6e;
+}
+
+.btn-register {
+    background: #087f6e;
+    color: white;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #263445;
+    color: white;
+}

@@ -9,106 +9,122 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/auth.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
         <script defer th:src="@{/js/language.js}"></script>
 
     </head>
     <body>
 
-        <header class="header">
+        <!-- Header -->
+        <div th:replace="~{fragments/header :: header}"></div>
 
-            <a href="/" class="logo">
-                <span>介護</span>
-                <strong>Kaigo Exam</strong>
-            </a>
-
-            <div class="header-right">
-
-                <select id="languageSelect" class="language-select">
-                    <option value="ja">🇯🇵 日本語</option>
-                    <option value="vi">🇻🇳 Tiếng Việt</option>
-                    <option value="en">🇬🇧 English</option>
-                </select>
-
-                <a href="/" class="home-link" data-i18n="home">
-                    Home
-                </a>
-
-            </div>
-        </header>
-
-
+        <!-- LOGIN SECTION -->
         <main class="auth-container">
 
             <div class="auth-card">
 
-                <div class="auth-logo">介護</div>
+                <!-- TITLE -->
+                <div class="auth-heading">
 
-                <h1 data-i18n="loginTitle">Welcome Back</h1>
+                    <h1 th:text="#{login.title}">
+                        Welcome Back
+                    </h1>
 
-                <p class="description"
-                   data-i18n="loginDescription">
-                    Sign in to continue your learning journey.
-                </p>
+                    <p th:text="#{login.description}">
+                        Sign in to continue your learning journey.
+                    </p>
 
-                <form action="/login" method="post">
+                </div>
 
+
+                <!-- LOGIN FORM -->
+                <form th:action="@{/login}"
+                      method="post"
+                      class="auth-form">
+
+                    <!-- EMAIL -->
                     <div class="form-group">
-                        <label data-i18n="email">Email Address</label>
 
-                        <input type="email"
-                               name="email"
-                               placeholder="example@email.com"
-                               required>
-                    </div>
-
-                    <div class="form-group">
-                        <label data-i18n="password">Password</label>
-
-                        <input type="password"
-                               name="password"
-                               required>
-                    </div>
-
-                    <div class="form-options">
-
-                        <label class="remember">
-                            <input type="checkbox" name="remember">
-                            <span data-i18n="remember">
-                                Remember me
-                            </span>
+                        <label for="email"
+                               th:text="#{login.email}">
+                            Email Address
                         </label>
 
-                        <a href="#" data-i18n="forgot">
+                        <input type="email"
+                               id="email"
+                               name="username"
+                               placeholder="example@email.com"
+                               autocomplete="username"
+                               required>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+
+                        <label for="password"
+                               th:text="#{login.password}">
+                            Password
+                        </label>
+
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               autocomplete="current-password"
+                               required>
+
+                    </div>
+
+
+                    <!-- REMEMBER / FORGOT -->
+                    <div class="login-options">
+
+                        <label class="remember-option">
+
+                            <input type="checkbox"
+                                   name="remember-me">
+
+                            <span th:text="#{login.remember}">
+                                Remember me
+                            </span>
+
+                        </label>
+
+                        <a th:href="@{/forgot-password}"
+                           class="forgot-link"
+                           th:text="#{login.forgot}">
                             Forgot password?
                         </a>
 
                     </div>
 
-                    <button type="submit" class="btn-primary"
-                            data-i18n="signIn">
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit"
+                            class="auth-submit"
+                            th:text="#{login.button}">
                         Sign In
                     </button>
 
                 </form>
 
+
+                <!-- REGISTER LINK -->
                 <div class="auth-footer">
 
-                    <span data-i18n="noAccount">
+                    <span th:text="#{login.no.account}">
                         Don't have an account?
                     </span>
 
-                    <a href="/register" data-i18n="createAccount">
+                    <a th:href="@{/register}"
+                       th:text="#{login.create.account}">
                         Create Account
                     </a>
-
                 </div>
-
             </div>
-
         </main>
-
-        <footer>
-            © 2026 Kaigo Exam System
-        </footer>
+        <!-- Footer -->
+        <div th:replace="~{fragments/footer :: footer}"></div>
     </body>
 </html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us | Kaigo Exam</title>
+
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/about.css}">
+        <script defer th:src="@{/js/language.js}"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <main>
+
+            <!-- HERO SECTION -->
+            <section class="about-hero">
+
+                <div class="about-hero-content">
+
+                    <span class="hero-label"
+                          th:text="#{about.hero.label}">
+                        ABOUT KAIGO EXAM
+                    </span>
+
+                    <h1 th:text="#{about.hero.title}">
+                        Supporting Your Journey in Japanese Caregiving
+                    </h1>
+
+                    <p th:text="#{about.hero.description}">
+                        We aim to make caregiving education more accessible
+                        through online learning and examination preparation.
+                    </p>
+
+                    <div class="about-hero-badge">
+                        🤝
+                        <span th:text="#{about.hero.badge}">
+                            LEARN · PRACTICE · GROW
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WHO WE ARE -->
+            <section class="about-intro">
+
+                <div class="about-intro-content">
+
+                    <div class="about-intro-image">
+                        <div class="about-image-placeholder">
+                            🤝
+                        </div>
+                    </div>
+
+                    <div class="about-intro-text">
+
+                        <span class="section-label"
+                              th:text="#{about.intro.label}">
+                            WHO WE ARE
+                        </span>
+
+                        <h2 th:text="#{about.intro.title}">
+                            Welcome to Kaigo Exam
+                        </h2>
+
+                        <p th:text="#{about.intro.paragraph1}">
+                            Kaigo Exam is an online learning platform
+                            focused on Japanese caregiving education
+                            and examination preparation.
+                        </p>
+
+                        <p th:text="#{about.intro.paragraph2}">
+                            Our goal is to support learners who want
+                            to improve their caregiving knowledge,
+                            develop practical skills and prepare
+                            for examinations in Japan.
+                        </p>
+
+                        <a th:href="@{/courses}"
+                           class="btn-primary"
+                           th:text="#{about.intro.button}">
+                            Explore Our Courses →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MISSION & VISION -->
+            <section class="about-purpose">
+
+                <div class="section-heading">
+
+                    <span class="section-label"
+                          th:text="#{about.purpose.label}">
+                        OUR PURPOSE
+                    </span>
+
+                    <h2 th:text="#{about.purpose.title}">
+                        Mission & Vision
+                    </h2>
+
+                </div>
+
+                <div class="purpose-grid">
+
+                    <!-- MISSION -->
+                    <article class="purpose-card">
+
+                        <div class="purpose-icon">🎯</div>
+
+                        <h3 th:text="#{about.mission.title}">
+                            Our Mission
+                        </h3>
+
+                        <p th:text="#{about.mission.description}">
+                            Provide accessible learning resources
+                            and examination preparation for people
+                            studying caregiving.
+                        </p>
+
+                    </article>
+
+
+                    <!-- VISION -->
+                    <article class="purpose-card">
+
+                        <div class="purpose-icon">🌏</div>
+
+                        <h3 th:text="#{about.vision.title}">
+                            Our Vision
+                        </h3>
+
+                        <p th:text="#{about.vision.description}">
+                            Become a trusted learning platform
+                            connecting learners with knowledge
+                            and opportunities in Japanese caregiving.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CORE VALUES -->
+            <section class="about-values">
+
+                <div class="section-heading">
+
+                    <span class="section-label"
+                          th:text="#{about.values.label}">
+                        WHAT WE BELIEVE
+                    </span>
+
+                    <h2 th:text="#{about.values.title}">
+                        Our Core Values
+                    </h2>
+
+                </div>
+
+                <div class="values-grid">
+
+                    <!-- VALUE 1 -->
+                    <article class="value-card">
+
+                        <div class="value-icon">📖</div>
+
+                        <h3 th:text="#{about.values.learning.title}">
+                            Continuous Learning
+                        </h3>
+
+                        <p th:text="#{about.values.learning.description}">
+                            Learning is a continuous journey
+                            toward improvement.
+                        </p>
+
+                    </article>
+
+
+                    <!-- VALUE 2 -->
+                    <article class="value-card">
+
+                        <div class="value-icon">💡</div>
+
+                        <h3 th:text="#{about.values.knowledge.title}">
+                            Practical Knowledge
+                        </h3>
+
+                        <p th:text="#{about.values.knowledge.description}">
+                            Focus on knowledge that learners
+                            can apply in practice.
+                        </p>
+
+                    </article>
+
+
+                    <!-- VALUE 3 -->
+                    <article class="value-card">
+
+                        <div class="value-icon">❤️</div>
+
+                        <h3 th:text="#{about.values.care.title}">
+                            Care and Respect
+                        </h3>
+
+                        <p th:text="#{about.values.care.description}">
+                            Promote understanding, dignity
+                            and respect in caregiving.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- CALL TO ACTION -->
+            <section class="about-cta">
+
+                <h2 th:text="#{about.cta.title}">
+                    Let's Learn Together
+                </h2>
+
+                <p th:text="#{about.cta.description}">
+                    Start your learning journey with Kaigo Exam.
+                </p>
+
+                <a th:href="@{/register}"
+                   class="btn-primary"
+                   th:text="#{about.cta.button}">
+                    Get Started
+                </a>
+
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </body>
+</html>
