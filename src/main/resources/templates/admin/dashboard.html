@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Admin Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+        <link rel="stylesheet" th:href="@{/css/admin_dashboard.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <script defer th:src="@{/js/language.js}"></script>
+    </head>
+    <body>
+        <div th:replace="~{fragments/header :: header}"></div>
+
+        <main class="admin-layout">
+            <!-- MENU MAINTENANCE -->
+            <aside class="admin-sidebar">
+                <h3>Maintenance Menu</h3>
+
+                <div class="admin-menu-group">
+                    <div class="admin-menu-title">Danh sách &amp; Người dùng</div>
+                    <ul class="admin-menu-list">
+                        <li><a th:href="@{/admin/dashboard}">Tổng quan Admin</a></li>
+                        <li><a th:href="@{/admin/users}">Danh sách người dùng (Users)</a></li>
+                    </ul>
+                </div>
+
+                <div class="admin-menu-group">
+                    <div class="admin-menu-title">Quản trị nội dung &amp; Chức năng</div>
+                    <ul class="admin-menu-list">
+                        <li><a th:href="@{/admin/courses}">Maintenance khóa học (Courses)</a></li>
+                        <li><a th:href="@{/admin/exams}">Maintenance đề thi (Exams)</a></li>
+                        <li><a th:href="@{/admin/questions}">Maintenance câu hỏi (Questions)</a></li>
+                        <li><a th:href="@{/admin/settings}">Cấu hình hệ thống</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <section class="admin-content">
+                <h1>Admin Dashboard</h1>
+                <p>Chào mừng quản trị viên. Chọn chức năng maintenance danh sách bên menu trái hoặc thẻ dưới đây.</p>
+
+                <div class="admin-cards">
+                    <div class="admin-card">
+                        <h4>Users Management</h4>
+                        <p>Tổng số tài khoản: <strong th:text="${totalUsers}">0</strong></p>
+                        <a th:href="@{/admin/users}">Mở danh sách User</a>
+                    </div>
+
+                    <div class="admin-card">
+                        <h4>Courses Maintenance</h4>
+                        <p>Thêm, sửa, xóa danh sách khóa học Kaigo.</p>
+                        <a th:href="@{/admin/courses}">Quản lý Courses</a>
+                    </div>
+
+                    <div class="admin-card">
+                        <h4>Exams Maintenance</h4>
+                        <p>Quản lý danh sách bài thi thử và bộ câu hỏi.</p>
+                        <a th:href="@{/admin/exams}">Quản lý Exams</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div th:replace="~{fragments/footer :: footer}"></div>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2026/11/27, 22:34:36
+    Author     : kai
+*/
+.admin-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+.admin-sidebar {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    height: fit-content;
+}
+.admin-sidebar h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+.admin-menu-group {
+    margin-bottom: 18px;
+}
+.admin-menu-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+.admin-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.admin-menu-list li {
+    margin-bottom: 6px;
+}
+.admin-menu-list a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 14px;
+}
+.admin-menu-list a:hover {
+    background: #f3f4f6;
+}
+.admin-content {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 24px;
+}
+.admin-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+.admin-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+    background: #fafafa;
+}
+.admin-card h4 {
+    margin: 0 0 8px;
+}
+.admin-card p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: #4b5563;
+}
+.admin-card a {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 13px;
+}
+@media (max-width: 768px) {
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+}

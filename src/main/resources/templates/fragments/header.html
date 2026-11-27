@@ -1,7 +1,7 @@
 <header class="header">
     <div class="logo">
         <a href="/" class="logo">
-            <img th:src="@{/images/logo.png}" alt="Kaigo Exam Logo" class="logo-image">
+            <img th:src="@{/images/logo.png}" alt="Logo" class="logo-image">
         </a>
     </div>
 
@@ -23,17 +23,48 @@
                 Tiếng Việt
             </option>
 
-            <option value="en"
-                    th:selected="${currentLanguage == 'en'}">
+            <option value="en" th:selected="${currentLanguage == 'en'}">
                 English
             </option>
         </select>
+        <!-- WHEN NOT LOGGED IN -->
+        <div sec:authorize="!isAuthenticated()">
+            <a href="/login" class="btn-login" th:text="#{common.login}"
+               data-i18n="login">Login</a>
 
-        <a href="/login" class="btn-login" th:text="#{common.login}"
-           data-i18n="login">Login</a>
+            <a href="/register" class="btn-register" th:text="#{common.register}"
+               data-i18n="register">Register</a>
+        </div>
+    </div>
+    <!-- WHEN LOGGED IN -->
+    <div sec:authorize="isAuthenticated()"
+         class="user-info">
 
-        <a href="/register" class="btn-register" th:text="#{common.register}"
-           data-i18n="register">Register</a>
+        <span class="welcome-text">
+            Welcome,
+            <strong sec:authentication="principal.username">
+            </strong>
+        </span>
+
+        <!-- ADMIN MENU -->
+<!--        <div sec:authorize="hasRole('ADMIN')"
+             class="admin-menu">
+
+            <a th:href="@{/admin/dashboard}"
+               class="btn-admin">
+                Admin Dashboard
+            </a>
+
+        </div>-->
+
+        <!-- LOGOUT -->
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="btn-logout">
+                Logout
+            </button>
+
+        </form>
 
     </div>
+
 </header>

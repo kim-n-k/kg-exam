@@ -64,6 +64,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .btn-login,
+.btn-logout,
 .btn-register {
     text-decoration: none;
     padding: 10px 20px;
@@ -79,6 +80,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .btn-register {
     background: #087f6e;
     color: white;
+}
+
+.btn-admin {
+    background: #7c3aed;
+    color: white;
+}
+
+.btn-logout {
+    /*    background: #dc2626;
+        color: white;*/
+     color: #dc2626;
+    border: 1px solid #087f6e;
 }
 
 /* FOOTER */

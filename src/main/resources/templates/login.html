@@ -33,10 +33,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <p th:text="#{login.description}">
                         Sign in to continue your learning journey.
                     </p>
+                    <!-- Error Message khi Spring Security chuyển hướng tới /login?error -->
+                    <p th:if="${param.error}"
+                       style="color:red">
+                        Invalid login name or password.
+                    </p>
+
+                    <!-- Logout Message khi đăng xuất thành công -->
+                    <p th:if="${param.logout}"
+                       style="color:green">
+                        You have been logged out.
+                    </p>
 
                 </div>
 
-
+                <!-- Error Message -->
+                <p th:if="${error}"
+                   th:text="${error}"
+                   style="color:red">
+                </p>
                 <!-- LOGIN FORM -->
                 <form th:action="@{/login}"
                       method="post"
@@ -44,17 +59,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                     <!-- EMAIL -->
                     <div class="form-group">
-
-                        <label for="email"
-                               th:text="#{login.email}">
-                            Email Address
+                        <label for="loginName" th:text="#{login.loginname}">
+                            Login Name
                         </label>
 
-                        <input type="email"
-                               id="email"
+                        <input type="text"
+                               id="loginName"
                                name="username"
-                               placeholder="example@email.com"
-                               autocomplete="username"
+                               placeholder="Login name"
                                required>
 
                     </div>
